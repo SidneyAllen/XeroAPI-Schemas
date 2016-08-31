@@ -6,11 +6,11 @@ addons:
     - libxml2-utils
 script:
 - xmllint --noout v2.00/*.xsd
-- xmllint --noout --schema v2.00/CreditNote.xsd tests/v2.00/CreditNote.xml
-- xmllint --noout --schema v2.00/Invoice.xsd tests/v2.00/Invoice.xml
-- xmllint --noout --schema v2.00/Invoice.xsd tests/v2.00/Invoice2.xml
-- xmllint --noout --schema v2.00/Items.xsd tests/v2.00/Items.xml
-- xmllint --noout --schema v2.00/Items.xsd tests/v2.00/Items2.xml
+- xmllint --noout --schema src/main/resources/XeroSchemas/v2.00/CreditNote.xsd tests/v2.00/CreditNote.xml
+- xmllint --noout --schema src/main/resources/XeroSchemas/v2.00/Invoice.xsd tests/v2.00/Invoice.xml
+- xmllint --noout --schema src/main/resources/XeroSchemas/v2.00/Invoice.xsd tests/v2.00/Invoice2.xml
+- xmllint --noout --schema src/main/resources/XeroSchemas/v2.00/Items.xsd tests/v2.00/Items.xml
+- xmllint --noout --schema src/main/resources/XeroSchemas/v2.00/Items.xsd tests/v2.00/Items2.xml
 notifications:
   flowdock:
     secure: b+NsNcWpWn9WCvLf16J9v1L/y/wek6r+C0wh3nJeiTyHKTxBoSmyLRF5fjQuQn4pQGpET+CCooc6iVy8lvflZrwTfmeTVh7tKAy9zBOTD9QaIQ33E+0D0BfgXWAU71Bj6eXksPi+W4cwvcFztB73duhqb1sjOQcw1CCM7tgHFOQ=

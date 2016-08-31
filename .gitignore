@@ -5,6 +5,7 @@
 *.sln.cache
 *.suo
 *.csproj.user
+*.DS_Store
 
 # Resharper
 *[Rr]e[Ss]harper.user
