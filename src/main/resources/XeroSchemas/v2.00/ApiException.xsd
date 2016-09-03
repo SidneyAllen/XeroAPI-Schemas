@@ -6,7 +6,7 @@
 
   <xs:complexType name="Elements">
     <xs:all>
-      <xs:element name="DataContractBase" maxOccurs="unbounded" minOccurs="0"/>
+      <xs:element name="DataContractBase" minOccurs="0"/>
     </xs:all>
   </xs:complexType>
 
@@ -17,7 +17,7 @@
         <xs:element name="ErrorNumber" type="xs:integer" minOccurs="1" maxOccurs="1" />
         <xs:element name="Type" type="xs:string" minOccurs="1" maxOccurs="1" />
         <xs:element name="Message" type="xs:string" minOccurs="1" maxOccurs="1" />
-        <xs:element name="Elements" type="Elements" maxOccurs="unbounded" minOccurs="0"/>
+        <xs:element name="Elements" type="Elements" minOccurs="0"/>
       </xs:all>
     </xs:complexType>
   </xs:element>

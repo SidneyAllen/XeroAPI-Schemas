@@ -5,11 +5,9 @@
 >
   <xs:include schemaLocation="BaseTypes.xsd" />
   <xs:include schemaLocation="Account.xsd" />
-  <xs:include schemaLocation="Payment.xsd" />
   <xs:include schemaLocation="Contact.xsd" />
   <xs:include schemaLocation="CurrencyCode.xsd" />
   <xs:include schemaLocation="LineItem.xsd" />
-  <xs:include schemaLocation="CreditNote.xsd" />
 
   <xs:element name="RepeatingInvoices" nillable="true" type="ArrayOfRepeatingInvoice" />
 

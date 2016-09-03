@@ -17,10 +17,10 @@
   <xs:include schemaLocation="TaxRate.xsd" />
   <xs:include schemaLocation="Currency.xsd" />
   <xs:include schemaLocation="CreditNote.xsd" />
-  <xs:include schemaLocation="Journal.xsd" />
+  <!--xs:include schemaLocation="Journal.xsd" /-->
   <xs:include schemaLocation="BrandingTheme.xsd" />
   <xs:include schemaLocation="Items.xsd" />
-  <xs:include schemaLocation="ManualJournal.xsd" />
+  <!--xs:include schemaLocation="ManualJournal.xsd" /-->
   <xs:include schemaLocation="Report.xsd" />
   <xs:include schemaLocation="Employee.xsd" />
   <xs:include schemaLocation="Attachment.xsd" />
@@ -52,10 +52,10 @@
       <xs:element minOccurs="0" maxOccurs="1" name="CreditNotes" type="ArrayOfCreditNote" />
       <xs:element minOccurs="0" maxOccurs="1" name="Currencies" type="ArrayOfCurrency" />
       <xs:element minOccurs="0" maxOccurs="1" name="Payments" type="ArrayOfPayment" />
-      <xs:element minOccurs="0" maxOccurs="1" name="Journals" type="ArrayOfJournal" />
+      <!--xs:element minOccurs="0" maxOccurs="1" name="Journals" type="ArrayOfJournal" /-->
       <xs:element minOccurs="0" maxOccurs="1" name="BrandingThemes" type="ArrayOfBrandingTheme" />
       <xs:element minOccurs="0" maxOccurs="1" name="Items" type="ArrayOfItem" />
-      <xs:element minOccurs="0" maxOccurs="1" name="ManualJournals" type="ArrayOfManualJournal" />
+      <!--xs:element minOccurs="0" maxOccurs="1" name="ManualJournals" type="ArrayOfManualJournal" /-->
       <xs:element minOccurs="0" maxOccurs="1" name="Reports" type="ArrayOfReport" />
       <xs:element minOccurs="0" maxOccurs="1" name="Employees" type="ArrayOfEmployee" />
       <xs:element minOccurs="0" maxOccurs="1" name="Attachments" type="ArrayOfAttachment" />
