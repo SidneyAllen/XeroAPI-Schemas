@@ -3,7 +3,9 @@
   xmlns="http://www.tm-xml.org/XMLSchema/common"
   version="1.0"
   elementFormDefault="qualified"
-  attributeFormDefault="unqualified">
+  attributeFormDefault="unqualified"
+  targetNamespace="http://www.xero.com/CountryCode" 
+  xmlns:country="http://www.xero.com/CountryCode" >
 
   <!-- ====================================================================== -->
   <!-- Filename    : ISOCountryCodeType-V2006.xsd                             -->

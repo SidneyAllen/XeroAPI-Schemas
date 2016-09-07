@@ -2,13 +2,13 @@
 <xs:schema id="Report"
     elementFormDefault="qualified"
     xmlns:xs="http://www.w3.org/2001/XMLSchema"
->
-  <xs:include schemaLocation="BaseTypes.xsd" />
+    targetNamespace="http://www.xero.com/Report" 
+    xmlns:report="http://www.xero.com/Report" >
 
   <!-- Reports -->
   <xs:complexType name="ArrayOfReport">
     <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="Report" nillable="true" type="Report" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Report" nillable="true" type="report:Report" />
     </xs:sequence>
   </xs:complexType>
 
@@ -18,16 +18,15 @@
       <xs:element name="ReportID" minOccurs="1" maxOccurs="1" type="xs:string" />
       <xs:element name="ReportName" minOccurs="1" maxOccurs="1" type="xs:string" />
       <xs:element name="ReportType" minOccurs="1" maxOccurs="1" type="xs:string" />
-      <xs:element name="ReportTitles" minOccurs="0" maxOccurs="1" type="ReportTitles" />
+      <xs:element name="ReportTitles" minOccurs="0" maxOccurs="1" type="report:ReportTitles" />
       <xs:element name="ReportDate" minOccurs="1" maxOccurs="1" type="xs:string" />
       <xs:element minOccurs="1" maxOccurs="1" name="UpdatedDateUTC" type="xs:dateTime" />
-      <xs:element name="Rows" minOccurs="0" maxOccurs="1" type="ReportRows" />
-      <xs:element name="Attributes" minOccurs="0" maxOccurs="1" type="ReportAttributes" />
-      <xs:element name="Fields" minOccurs="0" maxOccurs="1" type="ReportFields" />      
+      <xs:element name="Rows" minOccurs="0" maxOccurs="1" type="report:ReportRows" />
+      <xs:element name="Attributes" minOccurs="0" maxOccurs="1" type="report:ReportAttributes" />
+      <xs:element name="Fields" minOccurs="0" maxOccurs="1" type="report:ReportFields" />      
     </xs:sequence>
   </xs:complexType>
 
-  
   <!-- ReportTitles-->
   <xs:complexType name="ReportTitles">
     <xs:sequence>
@@ -39,7 +38,7 @@
   <!-- ReportAttributes -->
   <xs:complexType name="ReportAttributes">
     <xs:sequence>
-      <xs:element name="ReportAttribute" minOccurs="0" maxOccurs="unbounded" type="ReportAttribute" />
+      <xs:element name="ReportAttribute" minOccurs="0" maxOccurs="unbounded" type="report:ReportAttribute" />
     </xs:sequence>
   </xs:complexType>
 
@@ -55,7 +54,7 @@
   <!-- ReportFields -->
   <xs:complexType name="ReportFields">
     <xs:sequence>
-      <xs:element name="ReportField" minOccurs="0" maxOccurs="unbounded" type="ReportField" />
+      <xs:element name="ReportField" minOccurs="0" maxOccurs="unbounded" type="report:ReportField" />
     </xs:sequence>
   </xs:complexType>
 
@@ -71,18 +70,18 @@
   <!-- ReportRows -->
   <xs:complexType name="ReportRows">
     <xs:sequence>
-      <xs:element name="Row" minOccurs="0" maxOccurs="unbounded" type="ReportRow" />
+      <xs:element name="Row" minOccurs="0" maxOccurs="unbounded" type="report:ReportRow" />
     </xs:sequence>
   </xs:complexType>
 
   <!-- ReportRow -->
   <xs:complexType name="ReportRow">
     <xs:sequence>
-      <xs:element name="RowType" minOccurs="1" maxOccurs="1" type="ReportRowType" />
+      <xs:element name="RowType" minOccurs="1" maxOccurs="1" type="report:ReportRowType" />
       <xs:element name="Title" minOccurs="0" maxOccurs="1" type="xs:string" />
       <xs:element name="Header" minOccurs="0" maxOccurs="1" type="xs:string" />
-      <xs:element name="Rows" minOccurs="0" maxOccurs="1" type="ReportRows" />
-      <xs:element name="Cells" minOccurs="0" maxOccurs="1" type="ReportCells" />
+      <xs:element name="Rows" minOccurs="0" maxOccurs="1" type="report:ReportRows" />
+      <xs:element name="Cells" minOccurs="0" maxOccurs="1" type="report:ReportCells" />
     </xs:sequence>
   </xs:complexType>
 
@@ -99,7 +98,7 @@
   <!-- ReportCells -->
   <xs:complexType name="ReportCells">
     <xs:sequence>
-      <xs:element name="Cell" minOccurs="0" maxOccurs="unbounded" type="ReportCell" />
+      <xs:element name="Cell" minOccurs="0" maxOccurs="unbounded" type="report:ReportCell" />
     </xs:sequence>
   </xs:complexType>
 
@@ -107,7 +106,7 @@
   <xs:complexType name="ReportCell">
     <xs:sequence>
       <xs:element name="Value" minOccurs="0" maxOccurs="1" type="xs:string" />
-      <xs:element name="Attributes" minOccurs="0" maxOccurs="1" type="ReportCellAttributes" />
+      <xs:element name="Attributes" minOccurs="0" maxOccurs="1" type="report:ReportCellAttributes" />
     </xs:sequence>
   </xs:complexType>
 
@@ -115,7 +114,7 @@
   <!-- ReportCellAttributes -->
   <xs:complexType name="ReportCellAttributes">
     <xs:sequence>
-      <xs:element name="Attribute" minOccurs="0" maxOccurs="unbounded" type="ReportCellAttribute" />
+      <xs:element name="Attribute" minOccurs="0" maxOccurs="unbounded" type="report:ReportCellAttribute" />
     </xs:sequence>
   </xs:complexType>
 

@@ -14,7 +14,7 @@
  *  limitations under the License.
  *
  */
-package com.xero.api;
+package com.xero.model;
 
 /**
  *

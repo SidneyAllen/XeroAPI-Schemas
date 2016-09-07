@@ -2,39 +2,34 @@
 <xs:schema id="Employee"
     elementFormDefault="qualified"
     xmlns:xs="http://www.w3.org/2001/XMLSchema"
->
+    targetNamespace="http://www.xero.com/Employee" 
+    xmlns:emp="http://www.xero.com/Employee" 
+    xmlns:base="http://www.xero.com/BaseTypes" >
 
-  <xs:include schemaLocation="BaseTypes.xsd" />
+  <xs:import schemaLocation="BaseTypes.xsd"
+    namespace="http://www.xero.com/BaseTypes" />
 
-  <xs:element name="Employees" type="ArrayOfEmployee" />
+  <xs:element name="Employees" type="emp:ArrayOfEmployee" />
 
-  <!-- 
-  ArrayOfEmployee 
-  -->
   <xs:complexType name="ArrayOfEmployee">
     <xs:sequence>
-      <xs:element name="Employee" minOccurs="0" maxOccurs="unbounded" type="Employee" />
+      <xs:element name="Employee" minOccurs="0" maxOccurs="unbounded" type="emp:Employee" />
     </xs:sequence>
   </xs:complexType>
 
-  <!-- 
-  Employee 
-  -->
   <xs:complexType name="Employee">
     <xs:all>
-      <xs:element minOccurs="0" maxOccurs="1" name="ValidationErrors" type="ArrayOfValidationError" />
-      <xs:element minOccurs="0" maxOccurs="1" name="Warnings" type="ArrayOfWarning" />
-
-      <xs:element name="EmployeeID" minOccurs="0" maxOccurs="1" type="uniqueIdentifier" />
-      <xs:element name="Status" minOccurs="0" maxOccurs="1" type="employeeStatus" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ValidationErrors" type="base:ArrayOfValidationError" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Warnings" type="base:ArrayOfWarning" />
+      <xs:element name="EmployeeID" minOccurs="0" maxOccurs="1" type="base:uniqueIdentifier" />
+      <xs:element name="Status" minOccurs="0" maxOccurs="1" type="base:employeeStatus" />
       <xs:element name="Name" minOccurs="0" maxOccurs="1" type="xs:string" />
       <xs:element name="FirstName" minOccurs="0" maxOccurs="1" type="xs:string" />
       <xs:element name="LastName" minOccurs="0" maxOccurs="1" type="xs:string" />
-      <xs:element name="ExternalLink" minOccurs="0" maxOccurs="1" type="Hyperlink" />
+      <xs:element name="ExternalLink" minOccurs="0" maxOccurs="1" type="base:Hyperlink" />
       <xs:element name="UpdatedDateUTC" minOccurs="0" maxOccurs="1" type="xs:dateTime" />
-      
     </xs:all>
-    <xs:attribute name="status" type="entityValidationStatus" use="optional" />
+    <xs:attribute name="status" type="base:entityValidationStatus" use="optional" />
   </xs:complexType>
   
 </xs:schema>

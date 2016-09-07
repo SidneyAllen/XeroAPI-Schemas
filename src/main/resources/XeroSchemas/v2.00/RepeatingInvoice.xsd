@@ -2,44 +2,60 @@
 <xs:schema id="Invoice"
     elementFormDefault="qualified"
     xmlns:xs="http://www.w3.org/2001/XMLSchema"
->
-  <xs:include schemaLocation="BaseTypes.xsd" />
-  <xs:include schemaLocation="Account.xsd" />
-  <xs:include schemaLocation="Payment.xsd" />
-  <xs:include schemaLocation="Contact.xsd" />
-  <xs:include schemaLocation="CurrencyCode.xsd" />
-  <xs:include schemaLocation="LineItem.xsd" />
-  <xs:include schemaLocation="CreditNote.xsd" />
+    targetNamespace="http://www.xero.com/RepeatingInvoice"
+    xmlns:repinv="http://www.xero.com/RepeatingInvoice"
+    xmlns:base="http://www.xero.com/BaseTypes"
+    xmlns:acct="http://www.xero.com/Account"
+    xmlns:pay="http://www.xero.com/Payment"
+    xmlns:con="http://www.xero.com/Contact" 
+    xmlns:ccode="http://www.xero.com/CurrencyCode" 
+    xmlns:line="http://www.xero.com/LineItem" 
+    xmlns:cnote="http://www.xero.com/CreditNote" >
 
-  <xs:element name="RepeatingInvoices" nillable="true" type="ArrayOfRepeatingInvoice" />
+  <xs:import schemaLocation="BaseTypes.xsd"
+    namespace="http://www.xero.com/BaseTypes" /> 
+  <xs:import schemaLocation="Account.xsd"
+    namespace="http://www.xero.com/Account" />   
+  <xs:import schemaLocation="Payment.xsd"
+    namespace="http://www.xero.com/Payment" /> 
+  <xs:import schemaLocation="Contact.xsd"
+    namespace="http://www.xero.com/Contact" />
+  <xs:import schemaLocation="CurrencyCode.xsd"
+    namespace="http://www.xero.com/CurrencyCode" /> 
+  <xs:import schemaLocation="LineItem.xsd"
+    namespace="http://www.xero.com/LineItem" />  
+  <xs:import schemaLocation="CreditNote.xsd"
+    namespace="http://www.xero.com/CreditNote" /> 
+
+  <xs:element name="RepeatingInvoices" nillable="true" type="repinv:ArrayOfRepeatingInvoice" />
 
   <xs:complexType name="ArrayOfRepeatingInvoice">
     <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="RepeatingInvoice" nillable="true" type="RepeatingInvoice" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RepeatingInvoice" nillable="true" type="repinv:RepeatingInvoice" />
     </xs:sequence>
   </xs:complexType>
 
   <xs:complexType name="RepeatingInvoice">
     <xs:all>
-      <xs:element minOccurs="0" maxOccurs="1" name="ValidationErrors" type="ArrayOfValidationError" />
-      <xs:element minOccurs="0" maxOccurs="1" name="Warnings" type="ArrayOfWarning" />
-      <xs:element minOccurs="0" maxOccurs="1" name="Contact" type="Contact" />
-      <xs:element minOccurs="0" maxOccurs="1" name="BrandingThemeID" type="uniqueIdentifier" />
-      <xs:element minOccurs="0" maxOccurs="1" name="Status" type="invoiceStatus" />
-      <xs:element minOccurs="0" maxOccurs="1" name="CurrencyCode" type="currencyCode" />
-      <xs:element minOccurs="0" maxOccurs="1" name="LineAmountTypes" nillable="true" type="lineAmountType" />
-      <xs:element minOccurs="0" maxOccurs="1" name="LineItems" type="ArrayOfLineItem" />
-      <xs:element minOccurs="0" maxOccurs="1" name="SubTotal" nillable="true" type="itemPrice" />
-      <xs:element minOccurs="0" maxOccurs="1" name="TotalTax" nillable="true" type="itemPrice" />
-      <xs:element minOccurs="0" maxOccurs="1" name="Total" nillable="true" type="itemPrice" />
-      <xs:element minOccurs="0" maxOccurs="1" name="Schedule" type="Schedule" />
-      <xs:element minOccurs="0" maxOccurs="1" name="RepeatingInvoiceID" type="uniqueIdentifier" />
-      <xs:element minOccurs="0" maxOccurs="1" name="Type" type="invoiceType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ValidationErrors" type="base:ArrayOfValidationError" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Warnings" type="base:ArrayOfWarning" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Contact" type="con:Contact" />
+      <xs:element minOccurs="0" maxOccurs="1" name="BrandingThemeID" type="base:uniqueIdentifier" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Status" type="base:invoiceStatus" />
+      <xs:element minOccurs="0" maxOccurs="1" name="CurrencyCode" type="ccode:currencyCode" />
+      <xs:element minOccurs="0" maxOccurs="1" name="LineAmountTypes" nillable="true" type="base:lineAmountType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="LineItems" type="line:ArrayOfLineItem" />
+      <xs:element minOccurs="0" maxOccurs="1" name="SubTotal" nillable="true" type="base:itemPrice" />
+      <xs:element minOccurs="0" maxOccurs="1" name="TotalTax" nillable="true" type="base:itemPrice" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Total" nillable="true" type="base:itemPrice" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Schedule" type="repinv:Schedule" />
+      <xs:element minOccurs="0" maxOccurs="1" name="RepeatingInvoiceID" type="base:uniqueIdentifier" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Type" type="base:invoiceType" />
       <xs:element minOccurs="0" maxOccurs="1" name="Reference" type="xs:string" />
-      <xs:element minOccurs="0" maxOccurs="1" name="TotalDiscount" nillable="true" type="itemPrice" />
+      <xs:element minOccurs="0" maxOccurs="1" name="TotalDiscount" nillable="true" type="base:itemPrice" />
       <xs:element minOccurs="0" maxOccurs="1" name="HasAttachments" type="xs:boolean" />
     </xs:all>
-    <xs:attribute name="status" type="entityValidationStatus" use="optional" />
+    <xs:attribute name="status" type="base:entityValidationStatus" use="optional" />
   </xs:complexType>
 
   <xs:complexType name="Schedule">

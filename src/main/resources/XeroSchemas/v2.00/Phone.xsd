@@ -13,12 +13,10 @@
     <xs:all>
       <xs:element minOccurs="0" maxOccurs="1" name="ValidationErrors" type="base:ArrayOfValidationError" />
       <xs:element minOccurs="0" maxOccurs="1" name="Warnings" type="base:ArrayOfWarning" />
-
       <xs:element minOccurs="0" maxOccurs="1" name="PhoneType" type="phn:phoneTypeCodeType" />
       <xs:element minOccurs="0" maxOccurs="1" name="PhoneNumber" type="phn:phoneNumberType" />
       <xs:element minOccurs="0" maxOccurs="1" name="PhoneAreaCode" type="phn:phoneAreaCodeType" />
       <xs:element minOccurs="0" maxOccurs="1" name="PhoneCountryCode" type="phn:phoneCountryCodeType" />
-
     </xs:all>
     <xs:attribute name="status" type="base:entityValidationStatus" use="optional" />
   </xs:complexType>

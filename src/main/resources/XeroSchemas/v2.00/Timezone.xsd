@@ -3,7 +3,9 @@
   xmlns="http://www.tm-xml.org/XMLSchema/common"
   version="1.0"
   elementFormDefault="qualified"
-  attributeFormDefault="unqualified">
+  attributeFormDefault="unqualified"
+  targetNamespace="http://www.xero.com/Timezone"
+  xmlns:timez="http://www.xero.com/Timezone" >
 
   <!--
   Timezones supported by Xero API.

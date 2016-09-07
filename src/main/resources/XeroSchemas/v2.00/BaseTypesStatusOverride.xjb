@@ -29,17 +29,100 @@
               xmlns:inheritance="http://jaxb2-commons.dev.java.net/basic/inheritance"
               jxb:extensionBindingPrefixes="inheritance"
               jxb:version="2.0">
-    <!--jxb:bindings schemaLocation="Payment.xsd" node="/xsd:schema">
-        <jxb:bindings node="//xsd:complexType[@name='Payment']">
-            <inheritance:implements>com.xero.api.DataContractBase</inheritance:implements>
+    
+    <!--
+   
+    <jxb:bindings schemaLocation="CreditNote.xsd" node="/xsd:schema">
+        <jxb:bindings node="//xsd:complexType[@name='CreditNote']">
+            <inheritance:implements>com.xero.model.DataContractBase</inheritance:implements>
             <jxb:bindings node="./xsd:attribute[@name='status']">
                 <jxb:property name="validationStatus"/>
             </jxb:bindings>
         </jxb:bindings>
     </jxb:bindings>
-    <jxb:bindings schemaLocation="Tracking.xsd" node="/xsd:schema">
+-->
+    
+    <jxb:bindings schemaLocation="Invoice.xsd" node="/xsd:schema">
+        <jxb:bindings node="//xsd:complexType[@name='Invoice']">
+            <inheritance:implements>com.xero.model.DataContractBase</inheritance:implements>
+            <jxb:bindings node="./xsd:attribute[@name='status']">
+                <jxb:property name="validationStatus"/>
+            </jxb:bindings>
+        </jxb:bindings>
+        <jxb:bindings node="//xsd:complexType[@name='Invoice']">   
+                <jxb:class name="InvoiceObject"/>
+        </jxb:bindings>
+    </jxb:bindings>
+
+     <jxb:bindings schemaLocation="CreditNote.xsd" node="/xsd:schema">
+        <jxb:bindings node="//xsd:complexType[@name='CreditNote']">
+            <inheritance:implements>com.xero.model.DataContractBase</inheritance:implements>
+            <jxb:bindings node="./xsd:attribute[@name='status']">
+                <jxb:property name="validationStatus"/>
+            </jxb:bindings>
+        </jxb:bindings>
+        <jxb:bindings node="//xsd:complexType[@name='Allocation']">
+            <inheritance:implements>com.xero.model.DataContractBase</inheritance:implements>
+            <jxb:bindings node="./xsd:attribute[@name='status']">
+                <jxb:property name="validationStatus"/>
+            </jxb:bindings>
+        </jxb:bindings>
+        <jxb:bindings node="//xsd:complexType[@name='ArrayOfAllocation']">   
+                <jxb:class name="ArrayOfAllocationType"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xsd:complexType[@name='Allocation']">   
+                <jxb:class name="AllocationType"/>
+        </jxb:bindings>
+    </jxb:bindings>
+
+      <jxb:bindings schemaLocation="Account.xsd" node="/xsd:schema">
+        <jxb:bindings node="//xsd:complexType[@name='Account']">
+            <inheritance:implements>com.xero.model.DataContractBase</inheritance:implements>
+            <jxb:bindings node="./xsd:attribute[@name='status']">
+                <jxb:property name="validationStatus"/>
+            </jxb:bindings>
+        </jxb:bindings>
+    </jxb:bindings>
+
+     <jxb:bindings schemaLocation="BankTransaction.xsd" node="/xsd:schema">
+        <jxb:bindings node="//xsd:complexType[@name='BankTransaction']">
+            <inheritance:implements>com.xero.model.DataContractBase</inheritance:implements>
+            <jxb:bindings node="./xsd:attribute[@name='status']">
+                <jxb:property name="validationStatus"/>
+            </jxb:bindings>
+        </jxb:bindings>
+    </jxb:bindings>
+
+     <jxb:bindings schemaLocation="Employee.xsd" node="/xsd:schema">
+        <jxb:bindings node="//xsd:complexType[@name='Employee']">
+            <inheritance:implements>com.xero.model.DataContractBase</inheritance:implements>
+            <jxb:bindings node="./xsd:attribute[@name='status']">
+                <jxb:property name="validationStatus"/>
+            </jxb:bindings>
+        </jxb:bindings>
+    </jxb:bindings>
+
+    <jxb:bindings schemaLocation="ExpenseClaim.xsd" node="/xsd:schema">
+        <jxb:bindings node="//xsd:complexType[@name='ExpenseClaim']">
+            <inheritance:implements>com.xero.model.DataContractBase</inheritance:implements>
+            <jxb:bindings node="./xsd:attribute[@name='status']">
+                <jxb:property name="validationStatus"/>
+            </jxb:bindings>
+        </jxb:bindings>
+    </jxb:bindings>
+
+    <jxb:bindings schemaLocation="Receipt.xsd" node="/xsd:schema">
+        <jxb:bindings node="//xsd:complexType[@name='Receipt']">
+            <inheritance:implements>com.xero.model.DataContractBase</inheritance:implements>
+            <jxb:bindings node="./xsd:attribute[@name='status']">
+                <jxb:property name="validationStatus"/>
+            </jxb:bindings>
+        </jxb:bindings>
+    </jxb:bindings>
+
+     <jxb:bindings schemaLocation="Tracking.xsd" node="/xsd:schema">
         <jxb:bindings node="//xsd:complexType[@name='TrackingCategory']">
-            <inheritance:implements>com.xero.api.DataContractBase</inheritance:implements>
+            <inheritance:implements>com.xero.model.DataContractBase</inheritance:implements>
             <jxb:bindings node="./xsd:attribute[@name='status']">
                 <jxb:property name="validationStatus"/>
             </jxb:bindings>
@@ -50,88 +133,53 @@
             </jxb:bindings>
         </jxb:bindings>
     </jxb:bindings>
-    <jxb:bindings schemaLocation="TaxRate.xsd" node="/xsd:schema">
-        <jxb:bindings node="//xsd:complexType[@name='TaxRate']">
-            <inheritance:implements>com.xero.api.DataContractBase</inheritance:implements>
-            <jxb:bindings node="./xsd:attribute[@name='status']">
-                <jxb:property name="validationStatus"/>
-            </jxb:bindings>
+
+    <jxb:bindings schemaLocation="LineItem.xsd" node="/xsd:schema">
+        <jxb:bindings node="//xsd:complexType[@name='ArrayOfTrackingCategory']">   
+                <jxb:class name="ArrayOfTrackingCategoryForLineItem"/>
         </jxb:bindings>
-    </jxb:bindings>
-    <jxb:bindings schemaLocation="Receipt.xsd" node="/xsd:schema">
-        <jxb:bindings node="//xsd:complexType[@name='Receipt']">
-            <inheritance:implements>com.xero.api.DataContractBase</inheritance:implements>
-            <jxb:bindings node="./xsd:attribute[@name='status']">
-                <jxb:property name="validationStatus"/>
-            </jxb:bindings>
+        <jxb:bindings node="//xsd:complexType[@name='TrackingCategory']">   
+                <jxb:class name="TrackingCategoryForLineItem"/>
         </jxb:bindings>
-    </jxb:bindings>
-    <jxb:bindings schemaLocation="Employee.xsd" node="/xsd:schema">
-        <jxb:bindings node="//xsd:complexType[@name='Employee']">
-            <inheritance:implements>com.xero.api.DataContractBase</inheritance:implements>
-            <jxb:bindings node="./xsd:attribute[@name='status']">
-                <jxb:property name="validationStatus"/>
-            </jxb:bindings>
-        </jxb:bindings>
-    </jxb:bindings>
-    <jxb:bindings schemaLocation="CreditNote.xsd" node="/xsd:schema">
-        <jxb:bindings node="//xsd:complexType[@name='CreditNote']">
-            <inheritance:implements>com.xero.api.DataContractBase</inheritance:implements>
-            <jxb:bindings node="./xsd:attribute[@name='status']">
-                <jxb:property name="validationStatus"/>
-            </jxb:bindings>
-        </jxb:bindings>
-    </jxb:bindings>
-    <jxb:bindings schemaLocation="ExpenseClaim.xsd" node="/xsd:schema">
-        <jxb:bindings node="//xsd:complexType[@name='ExpenseClaim']">
-            <inheritance:implements>com.xero.api.DataContractBase</inheritance:implements>
-            <jxb:bindings node="./xsd:attribute[@name='status']">
-                <jxb:property name="validationStatus"/>
-            </jxb:bindings>
-        </jxb:bindings>
-    </jxb:bindings-->
-    <jxb:bindings schemaLocation="Invoice.xsd" node="/xsd:schema">
-        <jxb:bindings node="//xsd:complexType[@name='Invoice']">
-            <inheritance:implements>com.xero.api.DataContractBase</inheritance:implements>
-            <jxb:bindings node="./xsd:attribute[@name='status']">
-                <jxb:property name="validationStatus"/>
-            </jxb:bindings>
-        </jxb:bindings>
-        <jxb:bindings node="//xsd:complexType[@name='Payment']">
-            <inheritance:implements>com.xero.api.DataContractBase</inheritance:implements>
-            <jxb:bindings node="./xsd:attribute[@name='status']">
-                <jxb:property name="validationStatus"/>
-            </jxb:bindings>
-        </jxb:bindings>
-        <jxb:bindings node="//xsd:complexType[@name='CreditNote']">
-            <jxb:bindings node="./xsd:attribute[@name='status']">
-                <jxb:property name="validationStatus"/>
-            </jxb:bindings>
+        <jxb:bindings node="//xsd:element[@name='TrackingCategories']">   
+                <jxb:class name="TrackingCategoriesForLineItem"/>
         </jxb:bindings>
     </jxb:bindings>
     
-    <!--jxb:bindings schemaLocation="ManualJournal.xsd" node="/xsd:schema">
+    <jxb:bindings schemaLocation="ManualJournal.xsd" node="/xsd:schema">
         <jxb:bindings node="//xsd:complexType[@name='ManualJournal']">
-            <inheritance:implements>com.xero.api.DataContractBase</inheritance:implements>
+            <inheritance:implements>com.xero.model.DataContractBase</inheritance:implements>
             <jxb:bindings node="./xsd:attribute[@name='status']">
                 <jxb:property name="validationStatus"/>
             </jxb:bindings>
         </jxb:bindings>
     </jxb:bindings>
-    <jxb:bindings schemaLocation="BankTransaction.xsd" node="/xsd:schema">
-        <jxb:bindings node="//xsd:complexType[@name='BankTransaction']">
-            <inheritance:implements>com.xero.api.DataContractBase</inheritance:implements>
-            <jxb:bindings node="./xsd:attribute[@name='status']">
-                <jxb:property name="validationStatus"/>
-            </jxb:bindings>
-        </jxb:bindings>
-    </jxb:bindings-->
-    <jxb:bindings schemaLocation="Account.xsd" node="/xsd:schema">
-        <jxb:bindings node="//xsd:complexType[@name='Account']">
-            <inheritance:implements>com.xero.api.DataContractBase</inheritance:implements>
+   
+    <jxb:bindings schemaLocation="Payment.xsd" node="/xsd:schema">
+        <jxb:bindings node="//xsd:complexType[@name='Payment']">
+            <inheritance:implements>com.xero.model.DataContractBase</inheritance:implements>
             <jxb:bindings node="./xsd:attribute[@name='status']">
                 <jxb:property name="validationStatus"/>
             </jxb:bindings>
         </jxb:bindings>
     </jxb:bindings>
+
+    <jxb:bindings schemaLocation="RepeatingInvoice.xsd" node="/xsd:schema">
+        <jxb:bindings node="//xsd:complexType[@name='RepeatingInvoice']">
+            <inheritance:implements>com.xero.model.DataContractBase</inheritance:implements>
+            <jxb:bindings node="./xsd:attribute[@name='status']">
+                <jxb:property name="validationStatus"/>
+            </jxb:bindings>
+        </jxb:bindings>
+    </jxb:bindings>
+
+    <jxb:bindings schemaLocation="TaxRate.xsd" node="/xsd:schema">
+        <jxb:bindings node="//xsd:complexType[@name='TaxRate']">
+            <inheritance:implements>com.xero.model.DataContractBase</inheritance:implements>
+            <jxb:bindings node="./xsd:attribute[@name='status']">
+                <jxb:property name="validationStatus"/>
+            </jxb:bindings>
+        </jxb:bindings>
+    </jxb:bindings>
+  
 </jxb:bindings>

@@ -23,153 +23,18 @@
                 <artifactId>maven-jaxb2-plugin</artifactId>
                 <executions>
                     <!--execution>
-                        <id>schema-generate-1</id>
-                        <goals>
-                            <goal>generate</goal>
-                        </goals>
-                        <configuration>
-                            <forceRegenerate>true</forceRegenerate>
-                            <generatePackage>com.xero.api</generatePackage>
-                            <schemaIncludes>
-                                <include>XeroSchemas/v2.00/Account.xsd</include>
-                                <include>XeroSchemas/v2.00/Address.xsd</include>
-                                <include>XeroSchemas/v2.00/ApiException.xsd</include>
-                                <include>XeroSchemas/v2.00/Attachment.xsd</include>
-                                <include>XeroSchemas/v2.00/BankTransaction.xsd</include>
-                                <include>XeroSchemas/v2.00/BankTransfer.xsd</include>
-                                <include>XeroSchemas/v2.00/BaseTypes.xsd</include>
-                                <include>XeroSchemas/v2.00/BrandingTheme.xsd</include>
-                                <include>XeroSchemas/v2.00/Contact.xsd</include>
-                                <include>XeroSchemas/v2.00/Currency.xsd</include>
-                                <include>XeroSchemas/v2.00/CurrencyCode.xsd</include>
-                                <include>XeroSchemas/v2.00/Employee.xsd</include>
-                                <include>XeroSchemas/v2.00/ExpenseClaim.xsd</include>
-                                <include>XeroSchemas/v2.00/Invoice.xsd</include>
-                                <include>XeroSchemas/v2.00/Items.xsd</include>
-                                <include>XeroSchemas/v2.00/LineItem.xsd</include>
-                                <include>XeroSchemas/v2.00/Organisation.xsd</include>
-                                <include>XeroSchemas/v2.00/Phone.xsd</include>
-                                <include>XeroSchemas/v2.00/Receipt.xsd</include>
-                                <include>XeroSchemas/v2.00/Report.xsd</include>
-                                <include>XeroSchemas/v2.00/Setting.xsd</include>
-                                <include>XeroSchemas/v2.00/Setup.xsd</include>
-                                <include>XeroSchemas/v2.00/TaxRate.xsd</include>
-                                <include>XeroSchemas/v2.00/Timezone.xsd</include>
-                                <include>XeroSchemas/v2.00/User.xsd</include>
-                                <include>XeroSchemas/v2.00/RepeatingInvoice.xsd</include>
-                            </schemaIncludes>
-                            <bindingIncludes>
-                                <include>XeroSchemas/v2.00/InvoiceOverride.xjb</include>
-                            </bindingIncludes>
-                            <extension>true</extension>
-                            <args>
-                                <arg>-Xinheritance</arg>
-                            </args>
-                            <plugins>
-                                <plugin>
-                                    <groupId>org.jvnet.jaxb2_commons</groupId>
-                                    <artifactId>jaxb2-basics</artifactId>
-                                    <version>0.6.4</version>
-                                </plugin>
-                            </plugins>
-                        </configuration>
-                    </execution-->
-                    <!--execution>
-                        <id>schema-generate-2-tracking-journals-mj</id> 
-                        <goals>
-                            <goal>generate</goal>
-                        </goals>
-                        <configuration>
-                            <forceRegenerate>true</forceRegenerate>
-                            <generatePackage>com.xero.api</generatePackage>
-                            <schemaIncludes>
-                                <include>XeroSchemas/v2.00/Tracking.xsd</include>
-                                <include>XeroSchemas/v2.00/Journal.xsd</include>
-                                <include>XeroSchemas/v2.00/ManualJournal.xsd</include>
-                            </schemaIncludes>
-                            <bindingIncludes>
-                                <include>XeroSchemas/v2.00/TrackingOverride.xjb</include>
-                            </bindingIncludes>
-                            <extension>true</extension>
-                            <args>
-                                <arg>-Xinheritance</arg>
-                            </args>
-                            <plugins>
-                                <plugin>
-                                    <groupId>org.jvnet.jaxb2_commons</groupId>
-                                    <artifactId>jaxb2-basics</artifactId>
-                                    <version>0.6.4</version>
-                                </plugin>
-                            </plugins>
-                        </configuration>
-                    </execution>
-                    <execution>
-                        <id>schema-generate-3-creditnote</id> 
-                        <goals>
-                            <goal>generate</goal>
-                        </goals>
-                        <configuration>
-                            <forceRegenerate>true</forceRegenerate>
-                            <generatePackage>com.xero.api</generatePackage>
-                            <schemaIncludes>
-                                <include>XeroSchemas/v2.00/CreditNote.xsd</include>
-                            </schemaIncludes>
-                            <bindingIncludes>
-                                <include>XeroSchemas/v2.00/CreditNoteOverride.xjb</include>
-                            </bindingIncludes>
-                            <extension>true</extension>
-                            <args>
-                                <arg>-Xinheritance</arg>
-                            </args>
-                            <plugins>
-                                <plugin>
-                                    <groupId>org.jvnet.jaxb2_commons</groupId>
-                                    <artifactId>jaxb2-basics</artifactId>
-                                    <version>0.6.4</version>
-                                </plugin>
-                            </plugins>
-                        </configuration>
-                    </execution>
-                    <execution>
-                        <id>schema-generate-4-payment</id> 
-                        <goals>
-                            <goal>generate</goal>
-                        </goals>
-                        <configuration>
-                            <forceRegenerate>true</forceRegenerate>
-                            <generatePackage>com.xero.api</generatePackage>
-                            <schemaIncludes>
-                                <include>XeroSchemas/v2.00/Payment.xsd</include>
-                            </schemaIncludes>
-                            <bindingIncludes>
-                                <include>XeroSchemas/v2.00/PaymentOverride.xjb</include>
-                            </bindingIncludes>
-                            <extension>true</extension>
-                            <args>
-                                <arg>-Xinheritance</arg>
-                            </args>
-                            <plugins>
-                                <plugin>
-                                    <groupId>org.jvnet.jaxb2_commons</groupId>
-                                    <artifactId>jaxb2-basics</artifactId>
-                                    <version>0.6.4</version>
-                                </plugin>
-                            </plugins>
-                        </configuration>
-                    </execution>
-                    <execution>
                         <id>schema-generate-5</id> 
                         <goals>
                             <goal>generate</goal>
                         </goals>
                         <configuration>
                             <forceRegenerate>true</forceRegenerate>
-                            <generatePackage>com.xero.api</generatePackage>
+                            <generatePackage>com.xero.model</generatePackage>
                             <schemaIncludes>
-                                <include>XeroSchemas/v2.00/Allocation.xsd</include>
+                                <include>*.xsd</include>
                             </schemaIncludes>
                             <bindingIncludes>
-                                <include>XeroSchemas/v2.00/AllocationOverride.xjb</include>
+                                <include>*.xjb</include>
                             </bindingIncludes>
                             <extension>true</extension>
                             <args>
@@ -191,9 +56,41 @@
                         </goals>
                         <configuration>
                             <forceRegenerate>true</forceRegenerate>
-                            <generatePackage>com.xero.api</generatePackage>
+                            <generatePackage>com.xero.model</generatePackage>
                             <schemaIncludes>
+                                <include>XeroSchemas/v2.00/Account.xsd</include>
+                                <include>XeroSchemas/v2.00/Address.xsd</include>
+                                <include>XeroSchemas/v2.00/Allocation.xsd</include>
+                                <include>XeroSchemas/v2.00/Attachment.xsd</include>
+                                <include>XeroSchemas/v2.00/BankTransaction.xsd</include>
+                                <include>XeroSchemas/v2.00/BankTransfer.xsd</include>
+                                <include>XeroSchemas/v2.00/BaseTypes.xsd</include>
+                                <include>XeroSchemas/v2.00/BrandingTheme.xsd</include>
+                                <include>XeroSchemas/v2.00/Contact.xsd</include>
+                                <include>XeroSchemas/v2.00/CountryCode.xsd</include>
+                                <include>XeroSchemas/v2.00/CreditNote.xsd</include>
+                                <include>XeroSchemas/v2.00/Currency.xsd</include>
+                                <include>XeroSchemas/v2.00/CurrencyCode.xsd</include>
+                                <include>XeroSchemas/v2.00/Employee.xsd</include>
+                                <include>XeroSchemas/v2.00/ExpenseClaim.xsd</include>
                                 <include>XeroSchemas/v2.00/Invoice.xsd</include>
+                                <include>XeroSchemas/v2.00/Items.xsd</include>
+                                <include>XeroSchemas/v2.00/Journal.xsd</include>
+                                <include>XeroSchemas/v2.00/LineItem.xsd</include>
+                                <include>XeroSchemas/v2.00/ManualJournal.xsd</include>
+                                <include>XeroSchemas/v2.00/Organization.xsd</include>
+                                <include>XeroSchemas/v2.00/Payment.xsd</include>
+                                <include>XeroSchemas/v2.00/Phone.xsd</include>
+                                <include>XeroSchemas/v2.00/Receipt.xsd</include>
+                                <include>XeroSchemas/v2.00/RepeatingInvoice.xsd</include>
+                                <include>XeroSchemas/v2.00/Report.xsd</include>
+                                <include>XeroSchemas/v2.00/Setting.xsd</include>
+                                <include>XeroSchemas/v2.00/Setup.xsd</include>
+                                <include>XeroSchemas/v2.00/TaxRate.xsd</include>
+                                <include>XeroSchemas/v2.00/Timezone.xsd</include>
+                                <include>XeroSchemas/v2.00/Tracking.xsd</include>
+                                <include>XeroSchemas/v2.00/User.xsd</include>
+                                <include>XeroSchemas/v2.00/Response.xsd</include>
                             </schemaIncludes>
                             <bindingIncludes>
                                 <include>XeroSchemas/v2.00/BaseTypesStatusOverride.xjb</include>
