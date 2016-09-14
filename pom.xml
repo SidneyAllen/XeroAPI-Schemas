@@ -28,13 +28,13 @@
                             <goal>generate</goal>
                         </goals>
                         <configuration>
-                            <forceRegenerate>true</forceRegenerate>
+                            <forceRegenerate>false</forceRegenerate>
                             <generatePackage>com.xero.model</generatePackage>
                             <schemaIncludes>
-                                <include>*.xsd</include>
+                                <include>XeroSchemas/v2.00/*.xsd</include>
                             </schemaIncludes>
                             <bindingIncludes>
-                                <include>*.xjb</include>
+                                <include>XeroSchemas/v2.00/*.xjb</include>
                             </bindingIncludes>
                             <extension>true</extension>
                             <args>

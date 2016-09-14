@@ -30,6 +30,14 @@
               jxb:extensionBindingPrefixes="inheritance"
               jxb:version="2.0">
     
+    <jxb:bindings schemaLocation="Account.xsd" node="/xsd:schema">
+        <jxb:bindings node="//xsd:complexType[@name='Account']">
+            <jxb:bindings node="./xsd:attribute[@name='status']">
+                <jxb:property name="validationStatus"/>
+            </jxb:bindings>
+        </jxb:bindings>
+    </jxb:bindings>
+
     <jxb:bindings schemaLocation="Invoice.xsd" node="/xsd:schema">
         <jxb:bindings node="//xsd:complexType[@name='Invoice']">  
             <jxb:bindings node="./xsd:attribute[@name='status']">
@@ -60,13 +68,6 @@
         </jxb:bindings>
     </jxb:bindings>
 
-      <jxb:bindings schemaLocation="Account.xsd" node="/xsd:schema">
-        <jxb:bindings node="//xsd:complexType[@name='Account']">
-            <jxb:bindings node="./xsd:attribute[@name='status']">
-                <jxb:property name="validationStatus"/>
-            </jxb:bindings>
-        </jxb:bindings>
-    </jxb:bindings>
 
      <jxb:bindings schemaLocation="BankTransaction.xsd" node="/xsd:schema">
         <jxb:bindings node="//xsd:complexType[@name='BankTransaction']">
@@ -156,5 +157,5 @@
             </jxb:bindings>
         </jxb:bindings>
     </jxb:bindings>
-  
+
 </jxb:bindings>
