@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="Items"
+    elementFormDefault="qualified"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+>
+  <xs:include schemaLocation="BaseTypes.xsd" />
+
+  <xs:element name="Items" nillable="true" type="ArrayOfItem" />
+
+  <xs:complexType name="ArrayOfItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Item" nillable="true" type="Item" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="Item">
+    <xs:all>
+      <xs:element minOccurs="0" maxOccurs="1" name="ValidationErrors" type="ArrayOfValidationError" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Warnings" type="ArrayOfWarning" />
+      <xs:element name="Code" type="xs:string" minOccurs="0" maxOccurs="1" />
+      <xs:element name="InventoryAssetAccountCode" type="accountCode" minOccurs="0" maxOccurs="1" />
+      <xs:element name="Name" type="itemNameType" minOccurs="0" maxOccurs="1" />
+      <xs:element name="IsSold" type="xs:boolean" minOccurs="0" maxOccurs="1" />
+      <xs:element name="IsPurchased" type="xs:boolean" minOccurs="0" maxOccurs="1"  />
+      <xs:element name="Description" type="xs:string" minOccurs="0" maxOccurs="1" />
+      <xs:element name="PurchaseDescription" type="xs:string" minOccurs="0" maxOccurs="1" />
+      <xs:element name="PurchaseDetails" type="ItemPriceDetails" minOccurs="1" maxOccurs="1" />
+      <xs:element name="SalesDetails" type="ItemPriceDetails" minOccurs="1" maxOccurs="1" />
+      <xs:element name="IsTrackedAsInventory" type="xs:boolean" minOccurs="0" maxOccurs="1" />
+      <xs:element name="TotalCostPool" type="xs:decimal" minOccurs="0" maxOccurs="1" />
+      <xs:element name="QuantityOnHand" type="xs:decimal" minOccurs="0" maxOccurs="1" />
+      <xs:element name="ItemID" type="uniqueIdentifier" minOccurs="0" maxOccurs="1" />
+      <xs:element name="UpdatedDateUTC" minOccurs="0" maxOccurs="1" type="xs:dateTime"/>
+    </xs:all>
+    <xs:attribute name="status" type="entityValidationStatus" use="optional" />
+  </xs:complexType>
+
+  <xs:complexType name="ItemPriceDetails">
+    <xs:all>
+      <xs:element minOccurs="0" maxOccurs="1" name="ValidationErrors" type="ArrayOfValidationError" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Warnings" type="ArrayOfWarning" />
+      <xs:element name="UnitPrice" type="itemPrice" minOccurs="0" maxOccurs="1" />
+      <xs:element name="AccountCode" type="accountCode" minOccurs="0" maxOccurs="1" />
+      <xs:element name="COGSAccountCode" type="accountCode" minOccurs="0" maxOccurs="1" />
+      <xs:element name="TaxType" type="taxType" minOccurs="0" maxOccurs="1" />
+    </xs:all>
+    <xs:attribute name="status" type="entityValidationStatus" use="optional" />
+  </xs:complexType>
+  
+</xs:schema>

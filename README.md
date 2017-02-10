@@ -3,6 +3,39 @@ Xero API XSD Schemas
 
 This repository contains a set of XSD schemas that can be used with the [Xero API](http://api.xero.com). Xero provide [online accounting software](http://www.xero.com/) for businesses. For more information on connecting to the API, see the [Xero Developer Centre](http://developer.xero.com/).
 
+### Download Xero Schema
+
+Add this dependency to your POM.xml
+
+    <dependency>
+	  <groupId>com.xero</groupId>
+	  <artifactId>xero-accounting-api-schema</artifactId>
+	  <version>0.0.1</version>
+	</dependency>
+
+You will also add this repository to your POM.xml
+
+     <repository>
+      <id>xero-accounting-api-schema-mvn-repo</id>
+	  <url>https://raw.github.com/XeroAPI/XeroAPI-Schemas/mvn-repo/</url>
+	  <snapshots>
+	    <enabled>true</enabled>
+	    <updatePolicy>always</updatePolicy>
+	  </snapshots>
+    </repository>
+
+
+Generate your own classes
+---------
+We've added support for maven build automation.  A pom.xml file in the root defines how to generate Java classes from the XSD files in this project.  To generate you Java classes, open your terminal app and change to the directory containing the pom.xml file and run the following command
+
+```bash
+mvn clean install 
+```
+
+A new *target* directory will be created along with subfolders.  Look in the *generated-source* subfolder for your Java classes.
+
+
 **Please Note**
 These XSD schemas are provided as a guide for the XML that is read/written to the Xero API 'as is' for information purposes only.
 

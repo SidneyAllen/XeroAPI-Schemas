@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="InvoiceReminder"
+    elementFormDefault="qualified"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:include schemaLocation="BaseTypes.xsd" />
+    
+  <xs:element name="InvoiceReminders" type="ArrayOfInvoiceReminder" />
+
+  <!-- Branding Themes -->
+  <xs:complexType name="ArrayOfInvoiceReminder">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="InvoiceReminder" nillable="true" type="InvoiceReminder" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <!-- Invoice Reminder -->
+  <xs:complexType name="InvoiceReminder">
+    <xs:all>
+      <xs:element minOccurs="0" maxOccurs="1" name="ValidationErrors" type="ArrayOfValidationError" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Warnings" type="ArrayOfWarning" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Enabled" type="xs:boolean" />
+    </xs:all>
+    <xs:attribute name="status" type="entityValidationStatus" use="optional" />
+  </xs:complexType>
+  
+</xs:schema>
